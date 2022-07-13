@@ -1,25 +1,26 @@
+
+
 import Box from '@mui/material/Box';
-import { words } from './Data/words';
+
+import WordsInput from './WordsInput';
 import './GameSurface.css';
 
+type GameSurfaceProps = {
+  shuffledWords: string[] | null,
+  setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
+}
 
-
-function GameSurface() {
-  function shuffle(array: string[]): string[] {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
+function GameSurface({ shuffledWords, setWordsEntered }: GameSurfaceProps) {
 
   return (
     <div className="GameSurface">
       <Box>
-        {shuffle(words).map((word: string) => {
+        {shuffledWords && shuffledWords.map((word: string) => {
           return <span>{word} </span>
         })}
       </Box>
+      <WordsInput
+        setWordsEntered={setWordsEntered}></WordsInput>
     </div>
   )
 }
