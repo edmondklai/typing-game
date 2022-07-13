@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
-import { strictEqual } from 'assert';
+import TextField from '@mui/material/TextField';
 
 type WordsInputProps = {
   setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
@@ -8,40 +8,34 @@ type WordsInputProps = {
   wordsEntered: string,
 }
 
-
 function WordsInput({ wordsEntered, setWordsEntered, gameStarted }: WordsInputProps) {
   const [currentWord, setCurrentWord] = useState('');
 
-  function handleChange(e: any) {
-
-    const value = e.target.value;
-    console.log(value.length, value.charAt(value.length - 1))
-    setWordsEntered(value)
-
-
-    if (value.charAt(value.length - 1) === ' ') {
-      console.log('in')
+  function handleChange(e: React.KeyboardEvent): void {
+    const key = e.key;
+    if (key === ' ') {
       setCurrentWord('');
+      setWordsEntered(wordsEntered + key);
+    } else if (key === 'Backspace') {
+      setWordsEntered(wordsEntered.slice(0, -1));
+      setCurrentWord(currentWord.slice(0, -1))
     } else {
-      setCurrentWord(value);
+      setCurrentWord(currentWord + key);
+      setWordsEntered(wordsEntered + key);
     }
-    setCurrentWord(value)
-  }
-
-  function getInput(words: string): string {
-    const wordsAry = words.split(' ');
-    return wordsAry[wordsAry.length - 1]
   }
 
   return (
     <Box padding="10px">
-      <input
+      <TextField
+        size="small"
         disabled={!gameStarted}
-        onChange={handleChange}
+        type="text"
+        onKeyDown={handleChange}
         value={currentWord}
       >
-      </input>
-    </Box>
+      </TextField>
+    </Box >
 
   )
 }
