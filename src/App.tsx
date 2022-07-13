@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+
+import Stack from '@mui/material/Stack';
+
+import ScoreBoard from './Scoreboard';
+import GameSurface from './GameSurface';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stack className="App"
+      display="flex"
+      flexDirection="column"
+      alignItems="center">
+      <h1>Typing game</h1>
+      <ScoreBoard></ScoreBoard>
+      <GameSurface></GameSurface>
+    </Stack>
   );
 }
 
