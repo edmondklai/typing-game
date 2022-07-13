@@ -37,7 +37,6 @@ function App(): JSX.Element {
       const timer = setTimeout(() => {
         setTimeLeft(calculateTimeLeft());
       }, 1000);
-      console.log('timer')
       return () => clearTimeout(timer)
     }
   }, [gameStarted, timeLeft])
@@ -56,6 +55,7 @@ function App(): JSX.Element {
         shuffledWords={shuffledWords}
         setWordsEntered={setWordsEntered}
         gameStarted={gameStarted}
+        wordsEntered={wordsEntered}
       ></GameSurface>
     </Stack>
   );

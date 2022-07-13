@@ -1,27 +1,31 @@
 import Box from '@mui/material/Box';
-import TextField from "@mui/material/TextField";
 
 type WordsInputProps = {
   setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
   gameStarted: boolean,
+  wordsEntered: string,
 }
 
 
-function WordsInput({ setWordsEntered, gameStarted }: WordsInputProps) {
+function WordsInput({ wordsEntered, setWordsEntered, gameStarted }: WordsInputProps) {
 
   function handleChange(e: any) {
-    console.log(e.target.value)
     setWordsEntered(e.target.value)
+  }
+
+  function getInput(words: string): string {
+    const wordsAry = words.split(' ');
+    return wordsAry[wordsAry.length - 1]
   }
 
   return (
     <Box padding="10px">
-      <TextField
-        size="small"
+      <input
         disabled={!gameStarted}
         onChange={handleChange}
+        value={getInput(wordsEntered)}
       >
-      </TextField>
+      </input>
     </Box>
 
   )
