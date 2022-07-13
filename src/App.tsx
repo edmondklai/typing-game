@@ -23,22 +23,24 @@ function App(): JSX.Element {
     return array;
   }
 
-  function calculateTimeLeft(): number {
-    return timeLeft - 1;
-  }
 
   useEffect(() => {
     setShuffledWords(shuffle(words));
   }, [])
 
   useEffect(() => {
+    function calculateTimeLeft(): number {
+      return timeLeft - 1;
+    }
+
     if (timeLeft > 0 && gameStarted) {
       const timer = setTimeout(() => {
         setTimeLeft(calculateTimeLeft());
       }, 1000);
+      console.log('timer')
       return () => clearTimeout(timer)
     }
-  })
+  }, [gameStarted, timeLeft])
 
   return (
     <Stack className="App"
