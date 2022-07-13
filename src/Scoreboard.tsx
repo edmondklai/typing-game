@@ -12,14 +12,12 @@ type ScoreBoardProps = {
 function ScoreBoard(
   { gameStarted, setGameStarted }: ScoreBoardProps): JSX.Element {
 
-  console.log('ScoreBoard')
   return (
     <Box className="ScoreBoard">
       <h2>Scoreboard</h2>
       <StartGame
         gameStarted={gameStarted}
         setGameStarted={setGameStarted} />
-
     </Box>
   )
 }
