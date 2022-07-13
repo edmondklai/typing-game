@@ -21,7 +21,6 @@ function App(): JSX.Element {
       const timer = setTimeout(() => {
         setTimeLeft(calculateTimeLeft());
       }, 1000);
-      console.log(timeLeft)
       return () => clearTimeout(timer)
     }
   })
