@@ -7,3 +7,8 @@
 .highlight-correct {
   background-color: rgb(121, 255, 121);
 }
+
+
+.highlight-incorrect {
+  background-color: rgb(255, 121, 121);
+}

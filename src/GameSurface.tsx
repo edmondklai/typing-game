@@ -20,12 +20,17 @@ function GameSurface({ shuffledWords,
       <Box>
         {shuffledWords && shuffledWords.split('').map((character: string,
           index: number) => {
-
-          if (wordsEntered[index] === shuffledWords[index]) {
-            return <span key={index} className="highlight-correct">{character}</span>
+          let className: string;
+          if (wordsEntered[index] === undefined) {
+            className = ''
+          } else if (wordsEntered[index] === shuffledWords[index]) {
+            className = "highlight-correct"
           } else {
-            return <span key={index} className="">{character}</span>
+            className = "highlight-incorrect"
           }
+
+
+          return <span key={index} className={className}>{character}</span>
 
         })}
       </Box>
