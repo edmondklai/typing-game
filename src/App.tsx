@@ -9,9 +9,7 @@ import { words } from './Data/words';
 import './App.css';
 
 function App(): JSX.Element {
-
   const [gameStarted, setGameStarted] = useState<boolean>(false);
-  const [wordsEntered, setWordsEntered] = useState<string>('');
   const [shuffledWords, setShuffledWords] = useState<string>('');
 
 
@@ -24,10 +22,8 @@ function App(): JSX.Element {
   }
 
   useEffect(() => {
-    setShuffledWords(shuffle(words));
+    setShuffledWords(shuffle(words.slice(0, 10)));
   }, [])
-
-
 
   return (
     <Stack className="App"
@@ -41,9 +37,7 @@ function App(): JSX.Element {
       ></ScoreBoard>
       <GameSurface
         shuffledWords={shuffledWords}
-        setWordsEntered={setWordsEntered}
         gameStarted={gameStarted}
-        wordsEntered={wordsEntered}
       ></GameSurface>
     </Stack>
   );

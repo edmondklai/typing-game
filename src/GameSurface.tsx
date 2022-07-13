@@ -1,5 +1,6 @@
 
 
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 
 import WordsInput from './WordsInput';
@@ -7,23 +8,20 @@ import './GameSurface.css';
 
 type GameSurfaceProps = {
   shuffledWords: any,
-  setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
   gameStarted: boolean,
-  wordsEntered: string,
 }
 
 function GameSurface({ shuffledWords,
-  setWordsEntered, gameStarted, wordsEntered }: GameSurfaceProps) {
+  gameStarted }: GameSurfaceProps) {
+  const [wordsEntered, setWordsEntered] = useState<string>('');
 
-  console.log('game surface')
   return (
     <div className="GameSurface">
       <Box>
         {shuffledWords && shuffledWords.split('').map((character: string,
           index: number) => {
 
-          console.log()
-          if (wordsEntered[index] === shuffledWords.split('')[index]) {
+          if (wordsEntered[index] === shuffledWords[index]) {
             return <span key={index} className="highlight-correct">{character}</span>
           } else {
             return <span key={index} className="">{character}</span>

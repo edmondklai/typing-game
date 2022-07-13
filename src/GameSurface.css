@@ -3,3 +3,7 @@
   border: 1px black solid;
   margin: 50px;
 }
+
+.highlight-correct {
+  background-color: rgb(121, 255, 121);
+}
