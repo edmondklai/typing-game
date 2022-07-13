@@ -6,7 +6,7 @@ import WordsInput from './WordsInput';
 import './GameSurface.css';
 
 type GameSurfaceProps = {
-  shuffledWords: string[] | null,
+  shuffledWords: any,
   setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
   gameStarted: boolean,
   wordsEntered: string,
@@ -15,11 +15,20 @@ type GameSurfaceProps = {
 function GameSurface({ shuffledWords,
   setWordsEntered, gameStarted, wordsEntered }: GameSurfaceProps) {
 
+  console.log('game surface')
   return (
     <div className="GameSurface">
       <Box>
-        {shuffledWords && shuffledWords.map((word: string) => {
-          return <span>{word} </span>
+        {shuffledWords && shuffledWords.split('').map((character: string,
+          index: number) => {
+
+          console.log()
+          if (wordsEntered[index] === shuffledWords.split('')[index]) {
+            return <span key={index} className="highlight-correct">{character}</span>
+          } else {
+            return <span key={index} className="">{character}</span>
+          }
+
         })}
       </Box>
       <WordsInput
