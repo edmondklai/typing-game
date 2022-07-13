@@ -23,13 +23,13 @@ function App(): JSX.Element {
     return array;
   }
 
+  function calculateTimeLeft(): number {
+    return timeLeft - 1;
+  }
+
   useEffect(() => {
     setShuffledWords(shuffle(words));
   }, [])
-
-  const calculateTimeLeft = (): number => {
-    return timeLeft - 1;
-  }
 
   useEffect(() => {
     if (timeLeft > 0 && gameStarted) {
@@ -53,6 +53,7 @@ function App(): JSX.Element {
       <GameSurface
         shuffledWords={shuffledWords}
         setWordsEntered={setWordsEntered}
+        gameStarted={gameStarted}
       ></GameSurface>
     </Stack>
   );

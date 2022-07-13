@@ -3,9 +3,11 @@ import TextField from "@mui/material/TextField";
 
 type WordsInputProps = {
   setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
+  gameStarted: boolean,
 }
 
-function WordsInput({ setWordsEntered }: WordsInputProps) {
+
+function WordsInput({ setWordsEntered, gameStarted }: WordsInputProps) {
 
   function handleChange(e: any) {
     console.log(e.target.value)
@@ -16,6 +18,7 @@ function WordsInput({ setWordsEntered }: WordsInputProps) {
     <Box padding="10px">
       <TextField
         size="small"
+        disabled={!gameStarted}
         onChange={handleChange}
       >
       </TextField>

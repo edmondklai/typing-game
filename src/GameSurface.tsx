@@ -8,9 +8,11 @@ import './GameSurface.css';
 type GameSurfaceProps = {
   shuffledWords: string[] | null,
   setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
+  gameStarted: boolean,
 }
 
-function GameSurface({ shuffledWords, setWordsEntered }: GameSurfaceProps) {
+function GameSurface({ shuffledWords,
+  setWordsEntered, gameStarted }: GameSurfaceProps) {
 
   return (
     <div className="GameSurface">
@@ -20,7 +22,8 @@ function GameSurface({ shuffledWords, setWordsEntered }: GameSurfaceProps) {
         })}
       </Box>
       <WordsInput
-        setWordsEntered={setWordsEntered}></WordsInput>
+        setWordsEntered={setWordsEntered}
+        gameStarted={gameStarted}></WordsInput>
     </div>
   )
 }
