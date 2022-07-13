@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Box from '@mui/material/Box';
+import { strictEqual } from 'assert';
 
 type WordsInputProps = {
   setWordsEntered: React.Dispatch<React.SetStateAction<string>>,
@@ -8,9 +10,22 @@ type WordsInputProps = {
 
 
 function WordsInput({ wordsEntered, setWordsEntered, gameStarted }: WordsInputProps) {
+  const [currentWord, setCurrentWord] = useState('');
 
   function handleChange(e: any) {
-    setWordsEntered(e.target.value)
+
+    const value = e.target.value;
+    console.log(value.length, value.charAt(value.length - 1))
+    setWordsEntered(value)
+
+
+    if (value.charAt(value.length - 1) === ' ') {
+      console.log('in')
+      setCurrentWord('');
+    } else {
+      setCurrentWord(value);
+    }
+    setCurrentWord(value)
   }
 
   function getInput(words: string): string {
@@ -23,7 +38,7 @@ function WordsInput({ wordsEntered, setWordsEntered, gameStarted }: WordsInputPr
       <input
         disabled={!gameStarted}
         onChange={handleChange}
-        value={getInput(wordsEntered)}
+        value={currentWord}
       >
       </input>
     </Box>
