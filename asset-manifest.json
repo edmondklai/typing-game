@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e385570.css",
-    "main.js": "/static/js/main.fc213d97.js",
-    "static/js/787.59e57e67.chunk.js": "/static/js/787.59e57e67.chunk.js",
-    "index.html": "/index.html",
-    "main.6e385570.css.map": "/static/css/main.6e385570.css.map",
-    "main.fc213d97.js.map": "/static/js/main.fc213d97.js.map",
-    "787.59e57e67.chunk.js.map": "/static/js/787.59e57e67.chunk.js.map"
+    "main.css": "/typing-game/static/css/main.6e385570.css",
+    "main.js": "/typing-game/static/js/main.659fc9da.js",
+    "static/js/787.59e57e67.chunk.js": "/typing-game/static/js/787.59e57e67.chunk.js",
+    "index.html": "/typing-game/index.html",
+    "main.6e385570.css.map": "/typing-game/static/css/main.6e385570.css.map",
+    "main.659fc9da.js.map": "/typing-game/static/js/main.659fc9da.js.map",
+    "787.59e57e67.chunk.js.map": "/typing-game/static/js/787.59e57e67.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6e385570.css",
-    "static/js/main.fc213d97.js"
+    "static/js/main.659fc9da.js"
   ]
 }
