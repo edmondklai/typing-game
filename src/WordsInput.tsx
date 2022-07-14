@@ -13,6 +13,7 @@ function WordsInput({ wordsEntered, setWordsEntered, gameStarted }: WordsInputPr
 
   function handleChange(e: React.KeyboardEvent): void {
     const key = e.key;
+
     if (key === ' ') {
       setCurrentWord('');
       setWordsEntered(wordsEntered + key);

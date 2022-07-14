@@ -1,6 +1,6 @@
 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 
 import WordsInput from './WordsInput';
@@ -15,9 +15,19 @@ function GameSurface({ shuffledWords,
   gameStarted }: GameSurfaceProps) {
   const [wordsEntered, setWordsEntered] = useState<string>('');
 
+  useEffect(() => {
+    const el = document.getElementById(`word-${wordsEntered.length}`);
+    if (el) {
+      console.log(el)
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }, 0)
+    }
+  }, [wordsEntered])
+
   return (
     <div className="GameSurface">
-      <Box>
+      <Box className="GameSurface_words">
         {shuffledWords && shuffledWords.split('').map((character: string,
           index: number) => {
           let className: string;
@@ -28,10 +38,7 @@ function GameSurface({ shuffledWords,
           } else {
             className = "highlight-incorrect"
           }
-
-
-          return <span key={index} className={className}>{character}</span>
-
+          return <span key={index} id={`word-${index}`} className={className}>{character}</span>
         })}
       </Box>
       <WordsInput
