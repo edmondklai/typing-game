@@ -6,17 +6,17 @@ import Box from '@mui/material/Box';
 import WordsInput from './WordsInput';
 import './GameSurface.css';
 
-type GameSurfaceProps = {
-  shuffledWords: any,
-  gameStarted: boolean,
-  wordsEntered: string,
-  setWordsEntered: any,
+interface GameSurfaceProps {
+  shuffledWords: any;
+  gameStarted: boolean;
+  wordsEntered: string;
+  setWordsEntered: any;
 }
 
 function GameSurface({ shuffledWords,
   gameStarted, wordsEntered, setWordsEntered }: GameSurfaceProps) {
 
-  useEffect(() => {
+  useEffect((): void => {
     const el = document.getElementById(`word-${wordsEntered.length}`);
     if (el) {
       setTimeout(() => {

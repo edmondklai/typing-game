@@ -5,9 +5,9 @@ import Button from '@mui/material/Button';
 import GameMessage from './UI/GameMessage';
 import GameOver from './GameOver';
 
-type StartProps = {
-  gameStarted: boolean,
-  setGameStarted: React.Dispatch<React.SetStateAction<boolean>>,
+interface StartProps {
+  gameStarted: boolean;
+  setGameStarted: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function Start({ gameStarted, setGameStarted }: StartProps): JSX.Element {
@@ -29,7 +29,7 @@ function Start({ gameStarted, setGameStarted }: StartProps): JSX.Element {
       setGameStarted(false);
     }
 
-  }, [gameStarted, timeLeft])
+  }, [gameStarted, timeLeft, setGameStarted])
 
 
   const handleStart = (): void => {
