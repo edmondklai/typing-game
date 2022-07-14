@@ -2,8 +2,8 @@
 import Stack from '@mui/material/Stack';
 import { useState, useEffect } from 'react';
 
-import ScoreBoard from './Scoreboard';
-import GameSurface from './GameSurface';
+import ScoreBoard from './Home/Scoreboard';
+import GameSurface from './Home/GameSurface';
 
 import { words } from './Data/words';
 import './App.css';
@@ -22,7 +22,7 @@ function App(): JSX.Element {
     return array.join(' ')
   }
 
-  useEffect(() => {
+  useEffect((): void => {
     setShuffledWords(shuffle(words));
   }, [])
 

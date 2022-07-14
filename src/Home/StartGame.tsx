@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-import GameMessage from './UI/GameMessage';
-import GameOver from './GameOver';
+import GameMessage from '../UI/GameMessage';
+import GameOver from '../UI/GameOver';
 
 interface StartProps {
   gameStarted: boolean;
