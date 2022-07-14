@@ -18,7 +18,6 @@ function GameSurface({ shuffledWords,
   useEffect(() => {
     const el = document.getElementById(`word-${wordsEntered.length}`);
     if (el) {
-      console.log(el)
       setTimeout(() => {
         el.scrollIntoView({ behavior: 'smooth' });
       }, 0)
