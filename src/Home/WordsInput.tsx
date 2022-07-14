@@ -21,7 +21,12 @@ function WordsInput({ wordsEntered, setWordsEntered, gameStarted }: WordsInputPr
 
     if (key === 'Backspace') {
       setWordsEntered(wordsEntered.slice(0, -1));
-      setCurrentWord(currentWord.slice(0, -1))
+      if (currentWord === '' && wordsEntered) {
+        const wordsAry: string[] = wordsEntered.split(' ');
+        setCurrentWord(wordsAry[wordsAry.length - 2])
+      } else {
+        setCurrentWord(currentWord.slice(0, -1))
+      }
     }
 
     if (key.match(/^[a-z]$/)) {
