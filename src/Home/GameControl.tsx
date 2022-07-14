@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 import GameMessage from '../UI/GameMessage';
-import GameOver from '../UI/GameOver';
 
 interface GameControlProps {
   gameStarted: boolean;
@@ -11,7 +10,7 @@ interface GameControlProps {
 }
 
 function Start({ gameStarted, setGameStarted }: GameControlProps): JSX.Element {
-  const [timeLeft, setTimeLeft] = useState<number>(5);
+  const [timeLeft, setTimeLeft] = useState<number>(60);
 
   useEffect(() => {
     function calculateTimeLeft(): number {
