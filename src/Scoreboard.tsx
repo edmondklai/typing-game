@@ -1,16 +1,19 @@
 import Box from '@mui/material/Box';
 import StartGame from './StartGame';
-
+import Result from './Result';
 
 import './ScoreBoard.css';
 
 type ScoreBoardProps = {
   gameStarted: boolean,
   setGameStarted: React.Dispatch<React.SetStateAction<boolean>>,
+  wordsEntered: string,
+  shuffledWords: string,
 }
 
 function ScoreBoard(
-  { gameStarted, setGameStarted }: ScoreBoardProps): JSX.Element {
+  { gameStarted, setGameStarted,
+    wordsEntered, shuffledWords }: ScoreBoardProps): JSX.Element {
 
   return (
     <Box className="ScoreBoard">
@@ -18,6 +21,10 @@ function ScoreBoard(
       <StartGame
         gameStarted={gameStarted}
         setGameStarted={setGameStarted} />
+      <Result
+        wordsEntered={wordsEntered}
+        shuffledWords={shuffledWords}
+      ></Result>
     </Box>
   )
 }

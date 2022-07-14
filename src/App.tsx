@@ -11,6 +11,7 @@ import './App.css';
 function App(): JSX.Element {
   const [gameStarted, setGameStarted] = useState<boolean>(false);
   const [shuffledWords, setShuffledWords] = useState<string>('');
+  const [wordsEntered, setWordsEntered] = useState<string>('');
 
 
   function shuffle(array: string[]): string {
@@ -34,10 +35,14 @@ function App(): JSX.Element {
       <ScoreBoard
         gameStarted={gameStarted}
         setGameStarted={setGameStarted}
+        wordsEntered={wordsEntered}
+        shuffledWords={shuffledWords}
       ></ScoreBoard>
       <GameSurface
         shuffledWords={shuffledWords}
         gameStarted={gameStarted}
+        wordsEntered={wordsEntered}
+        setWordsEntered={setWordsEntered}
       ></GameSurface>
     </Stack>
   );
