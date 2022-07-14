@@ -7,7 +7,7 @@ type GameMessageProps = {
 
 function GameMessage({ label, message }: GameMessageProps) {
   return (
-    <Box>
+    <Box padding="5px">
       <span>{`${label}: ${message}`}</span>
     </Box>
   )

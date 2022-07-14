@@ -1,6 +1,6 @@
 
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Box from '@mui/material/Box';
 
 import WordsInput from './WordsInput';
@@ -9,11 +9,12 @@ import './GameSurface.css';
 type GameSurfaceProps = {
   shuffledWords: any,
   gameStarted: boolean,
+  wordsEntered: string,
+  setWordsEntered: any,
 }
 
 function GameSurface({ shuffledWords,
-  gameStarted }: GameSurfaceProps) {
-  const [wordsEntered, setWordsEntered] = useState<string>('');
+  gameStarted, wordsEntered, setWordsEntered }: GameSurfaceProps) {
 
   useEffect(() => {
     const el = document.getElementById(`word-${wordsEntered.length}`);
