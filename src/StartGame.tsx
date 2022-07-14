@@ -24,6 +24,11 @@ function Start({ gameStarted, setGameStarted }: StartProps): JSX.Element {
       }, 1000);
       return () => clearTimeout(timer)
     }
+
+    if (timeLeft === 0) {
+      setGameStarted(false);
+    }
+
   }, [gameStarted, timeLeft])
 
 

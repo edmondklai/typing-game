@@ -27,8 +27,8 @@ function Result({ wordsEntered, shuffledWords }: ResultProps) {
   return (
     <Stack display="flex" direction="row" justifyContent="center">
       <GameMessage label='Total words' message={getTotalWords()} />
-      <GameMessage label='WPM' message={getWordsPerMinute()} />
       <GameMessage label="Correct words" message={getCorrectWords()} />
+      <GameMessage label='WPM' message={getWordsPerMinute()} />
     </Stack>
 
 
