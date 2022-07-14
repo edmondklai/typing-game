@@ -1,5 +1,5 @@
 import Stack from '@mui/material/Stack';
-import GameMessage from './UI/GameMessage';
+import GameMessage from '../UI/GameMessage';
 
 interface ResultProps {
   wordsEntered: string;
