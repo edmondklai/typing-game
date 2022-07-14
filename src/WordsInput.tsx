@@ -17,10 +17,14 @@ function WordsInput({ wordsEntered, setWordsEntered, gameStarted }: WordsInputPr
     if (key === ' ') {
       setCurrentWord('');
       setWordsEntered(wordsEntered + key);
-    } else if (key === 'Backspace') {
+    }
+
+    if (key === 'Backspace') {
       setWordsEntered(wordsEntered.slice(0, -1));
       setCurrentWord(currentWord.slice(0, -1))
-    } else {
+    }
+
+    if (key.match(/^[a-z]$/)) {
       setCurrentWord(currentWord + key);
       setWordsEntered(wordsEntered + key);
     }
