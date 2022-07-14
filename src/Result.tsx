@@ -1,10 +1,11 @@
 import Stack from '@mui/material/Stack';
 import GameMessage from './UI/GameMessage';
 
-type ResultProps = {
-  wordsEntered: string,
-  shuffledWords: any,
+interface ResultProps {
+  wordsEntered: string;
+  shuffledWords: any;
 }
+
 function Result({ wordsEntered, shuffledWords }: ResultProps) {
   function getTotalWords(): string {
     return (wordsEntered.split(' ').length - 1).toString();
@@ -30,8 +31,6 @@ function Result({ wordsEntered, shuffledWords }: ResultProps) {
       <GameMessage label="Correct words" message={getCorrectWords()} />
       <GameMessage label='WPM' message={getWordsPerMinute()} />
     </Stack>
-
-
   )
 }
 

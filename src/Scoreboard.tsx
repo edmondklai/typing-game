@@ -4,11 +4,11 @@ import Result from './Result';
 
 import './ScoreBoard.css';
 
-type ScoreBoardProps = {
-  gameStarted: boolean,
-  setGameStarted: React.Dispatch<React.SetStateAction<boolean>>,
-  wordsEntered: string,
-  shuffledWords: string,
+interface ScoreBoardProps {
+  gameStarted: boolean;
+  setGameStarted: React.Dispatch<React.SetStateAction<boolean>>;
+  wordsEntered: string;
+  shuffledWords: string;
 }
 
 function ScoreBoard(

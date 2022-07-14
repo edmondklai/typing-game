@@ -1,8 +1,8 @@
 import Box from '@mui/material/Box';
 
-type GameMessageProps = {
-  label: string,
-  message: string,
+interface GameMessageProps {
+  label: string;
+  message: string;
 }
 
 function GameMessage({ label, message }: GameMessageProps) {
