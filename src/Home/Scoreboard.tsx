@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import StartGame from './StartGame';
+import GameControl from './GameControl';
 import Result from './Result';
 
 import './ScoreBoard.css';
@@ -18,7 +18,7 @@ function ScoreBoard(
   return (
     <Box className="ScoreBoard">
       <h2>Scoreboard</h2>
-      <StartGame
+      <GameControl
         gameStarted={gameStarted}
         setGameStarted={setGameStarted} />
       <Result

@@ -5,13 +5,13 @@ import Button from '@mui/material/Button';
 import GameMessage from '../UI/GameMessage';
 import GameOver from '../UI/GameOver';
 
-interface StartProps {
+interface GameControlProps {
   gameStarted: boolean;
   setGameStarted: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Start({ gameStarted, setGameStarted }: StartProps): JSX.Element {
-  const [timeLeft, setTimeLeft] = useState<number>(60);
+function Start({ gameStarted, setGameStarted }: GameControlProps): JSX.Element {
+  const [timeLeft, setTimeLeft] = useState<number>(5);
 
   useEffect(() => {
     function calculateTimeLeft(): number {
@@ -38,13 +38,15 @@ function Start({ gameStarted, setGameStarted }: StartProps): JSX.Element {
 
   return (
     <Box>
-      {!gameStarted && <Button onClick={handleStart}>Start Game</Button>}
-      {gameStarted && <GameMessage
-        label="Time remaining"
-        message={timeLeft.toString()}
-      ></GameMessage>}
+      {!gameStarted && timeLeft > 0 && <Button onClick={handleStart}>Start Game</Button>}
+      {
+        gameStarted && <GameMessage
+          label="Time remaining"
+          message={timeLeft.toString()}
+        ></GameMessage>
+      }
       {timeLeft === 0 && <GameOver></GameOver>}
-    </Box>
+    </Box >
 
   )
 }
