@@ -22,7 +22,7 @@ function App(): JSX.Element {
   }
 
   useEffect(() => {
-    setShuffledWords(shuffle(words.slice(0, 10)));
+    setShuffledWords(shuffle(words));
   }, [])
 
   return (

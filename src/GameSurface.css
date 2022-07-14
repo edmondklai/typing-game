@@ -4,10 +4,16 @@
   margin: 50px;
 }
 
+.GameSurface_words {
+  line-height: 3rem;
+  font-size: 1.5rem;
+  height: 100px;
+  overflow: scroll;
+}
+
 .highlight-correct {
   background-color: rgb(121, 255, 121);
 }
-
 
 .highlight-incorrect {
   background-color: rgb(255, 121, 121);
