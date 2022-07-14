@@ -45,7 +45,7 @@ function Start({ gameStarted, setGameStarted }: GameControlProps): JSX.Element {
           message={timeLeft.toString()}
         ></GameMessage>
       }
-      {timeLeft === 0 && <GameOver></GameOver>}
+      {timeLeft === 0 && <GameMessage label="Game over"></GameMessage>}
     </Box >
 
   )

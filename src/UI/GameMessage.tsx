@@ -2,13 +2,13 @@ import Box from '@mui/material/Box';
 
 interface GameMessageProps {
   label: string;
-  message: string;
+  message?: string;
 }
 
 function GameMessage({ label, message }: GameMessageProps) {
   return (
     <Box padding="5px">
-      <span>{`${label}: ${message}`}</span>
+      <span>{`${label}${message ? `: ${message}` : ''}`}</span>
     </Box>
   )
 }
